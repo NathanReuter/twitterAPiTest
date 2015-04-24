@@ -17,7 +17,6 @@ var getTimeLine = function (profileName, callback) {
             var timeLineMessages = '';
             _.each(tweets, function (twit, index) {
                 if ((index + 1) !== tweets.length) {
-                    console.log(index, tweets.lengt);
                     timeLineMessages += showFormatText(twit.created_at, twit.text, true);
                 } else {
                     timeLineMessages += showFormatText(twit.created_at, twit.text);
@@ -28,7 +27,7 @@ var getTimeLine = function (profileName, callback) {
     });
 },
     showFormatText = function (date, text, newLine) {
-        return 'Creation Date: ' + moment(date).format('DD-MM-YYYY, h:mm:ss') 
+        return 'Creation Date: ' + moment(date).format('DD-MM-YYYY, h:mm:ss')
             + ' # Message: ' + text + (newLine ? '\n' : '');
     };
 
